@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  base: '/icas/',
+  base: '/docs/',
   title: "ICAS",
   description: "Zaawansowane moduły automatyki dla Fibaro HC3",
   themeConfig: {
