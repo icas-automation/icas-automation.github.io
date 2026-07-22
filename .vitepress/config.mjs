@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  base: '/docs/',
+  base: '/',
   title: "ICAS",
   description: "Zaawansowane moduły automatyki dla Fibaro HC3",
   themeConfig: {
@@ -47,6 +47,61 @@ export default defineConfig({
     footer: {
       message: 'ICAS – Premium Smart Home Solutions',
       copyright: 'Copyright © 2026 ICAS'
+    }
+  },
+
+  locales: {
+    // ----------------------------------------------------
+    // JĘZYK POLSKI (Wersja główna / domyślna)
+    // ----------------------------------------------------
+    root: {
+      label: '🇵🇱 Polski',
+      lang: 'pl-PL',
+      title: "ICAS Automation",
+      description: "Dokumentacja modułów Fibaro HC3",
+      themeConfig: {
+        nav: [
+          { text: 'Strona Główna', link: '/' },
+          { text: 'Moduły', link: '/SurplusEnergySwitch/' }
+        ],
+        sidebar: [
+          {
+            text: 'Moduły ICAS',
+            items: [
+              { text: 'Surplus Energy Switch', link: '/SurplusEnergySwitch/' },
+              { text: 'Irrigation Control', link: '/IrrigationControl/' },
+              { text: 'Sofar Inverter', link: '/SofarInverter/' }
+            ]
+          }
+        ]
+      }
+    },
+
+    // ----------------------------------------------------
+    // JĘZYK ANGIELSKI (Pod kaskadą /en/)
+    // ----------------------------------------------------
+    en: {
+      label: '🇬🇧 English',
+      lang: 'en-US',
+      link: '/en/',
+      title: "ICAS Automation",
+      description: "Fibaro HC3 modules documentation",
+      themeConfig: {
+        nav: [
+          { text: 'Home', link: '/en/' },
+          { text: 'Modules', link: '/en/SurplusEnergySwitch/' }
+        ],
+        sidebar: [
+          {
+            text: 'ICAS Modules',
+            items: [
+              { text: 'Surplus Energy Switch', link: '/en/SurplusEnergySwitch/' },
+              { text: 'Irrigation Control', link: '/en/IrrigationControl/' },
+              { text: 'Sofar Inverter', link: '/en/SofarInverter/' }
+            ]
+          }
+        ]
+      }
     }
   }
 })

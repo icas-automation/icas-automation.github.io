@@ -3,3 +3,24 @@
   --vp-c-brand-2: #34d399;
   --vp-c-brand-3: #059669;
 }
+
+/* 1. Ukryj domyślną ikonkę 文A */
+.VPNavBarTranslations .vpi-languages,
+.VPNavBarTranslations .icon,
+.VPNavBarTranslations svg,
+.VPNavScreenTranslations .vpi-languages,
+.VPNavScreenTranslations .icon {
+  display: none !important;
+}
+
+/* 2. Wyświetl flagę Polski, gdy wybrany jest język polski */
+html[lang^="pl"] .VPNavBarTranslations button::before,
+html[lang^="pl"] .VPNavScreenTranslations button::before {
+  content: "Polski";
+}
+
+/* 3. Wyświetl flagę Wielkiej Brytanii, gdy wybrany jest język angielski */
+html[lang^="en"] .VPNavBarTranslations button::before,
+html[lang^="en"] .VPNavScreenTranslations button::before {
+  content: "English";
+}

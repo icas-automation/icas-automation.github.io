@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "ICAS"
   text: "Smart Home Energy Control"
-  tagline: "Polish Zaawansowane oprogramowanie klasy Premium dla centrali Fibaro HC3."
+  tagline: "English Zaawansowane oprogramowanie klasy Premium dla centrali Fibaro HC3."
   image:
     src: /logo.png
     alt: ICAS Smart Home
