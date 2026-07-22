@@ -51,6 +51,26 @@ Taki zabieg prowadzi do **częstego uszkadzania przekaźników**, braku stabilno
 | **Dedykowany interfejs diagnostyczny** | Brak | **Pełen podgląd stanu w interfejsie HC3** |
 
 ---
+::: tip WSKAZÓWKA
+Pamiętaj o zarezerwowaniu stałego adresu IP w routerze dla centrali HC3.
+:::
+
+::: warning UWAGA
+Zmiana tego parametru wymaga restartu silnika LUA.
+:::
+
+::: danger DANGER
+Błędna konfiguracja przekaźnika może uszkodzić pompę ciepła!
+:::
+
+## Moduł PV Optimizer <Badge type="tip" text="HC3 Only" /> <Badge type="warning" text="v1.2" />
+
+::: details Kliknij, aby zobaczyć pełny log zdarzeń
+```text
+2026-07-22 10:00:00 [INFO] Grid balance: +2400W
+2026-07-22 10:00:05 [INFO] Activating Heat Pump Stage 1
+```
+:::
 
 <div style="text-align: center; margin-top: 3rem;">
   <a href="./SurplusEnergySwitch/index" style="background-color: var(--vp-c-brand-1); color: white; padding: 12px 24px; border-radius: 8px; font-weight: bold; text-decoration: none;">
