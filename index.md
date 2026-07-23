@@ -6,8 +6,10 @@ hero:
   text: "Smart Home Energy Control"
   tagline: "Polish Zaawansowane oprogramowanie klasy Premium dla centrali Fibaro HC3."
   image:
-    src: /logo.png
+    src: ./images/logo.png
     alt: ICAS Smart Home
+    width: 300       # Szerokość w pikselach (nie dopisuj 'px')
+    style: "border-radius: 10px;" # Opcjonalnie: możesz wstrzyknąć dowolny CSS
   actions:
     - theme: brand
       text: Poznaj SurplusEnergySwitch
