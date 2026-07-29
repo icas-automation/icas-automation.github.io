@@ -1,36 +1,29 @@
-# Wymagania i Kompatybilność
+# System Requirements
 
-Aby zapewnić prawidłowe i bezawaryjne działanie modułu **SurplusEnergySwitch**, instalacja musi spełniać poniższe wymagania techniczne.
+To successfully run and take full advantage of the capabilities of the Surplus Energy Switch application, your Smart Home ecosystem must meet the following technical requirements:
 
----
+## Compatible Smart Home Gateway
+The application runs as a native Quick App and requires one of the following control gateways:
 
-## 1. Wymagania Wirusowe / Systemowe
+* FIBARO Home Center 3 (HC3)
+* FIBARO Home Center 3 Lite (HC3L)
+* Nice Yubii Home or Yubii Home PRO
 
-| Element | Wymaganie minimalne | Zalecane |
-| :--- | :--- | :--- |
-| **Centrala** | Fibaro Home Center 3 | Fibaro HC3 (FW > 5.140) |
-| **Dostęp do sieci** | Lokalna sieć LAN/Wi-Fi | Połączenie kablowe Ethernet (LAN) |
-| **Pamięć RAM HC3** | Stan stabilny (< 80% użycia) | Stan stabilny |
+Firmware Version: Gateway operating system (firmware) version `5.150` or higher is required.
 
----
+## Active Account and Network Connection
 
-## 2. Wymagane Liczniki Energii (Grid Meters)
+* **Gateway Registration:** The device must be registered to an official FibaroID or Nice ID user account.
+* **Internet Access**: An internet connection is required solely during installation and activation of the encrypted Quick App file (subsequent algorithm operation runs 100% locally and offline).
 
-Moduł do prawidłowej pracy wymaga **jednego, głównego źródła danych o bilansie mocy na przyłączu budynku** (wartość wyrażona w Watach `W`). 
+## Energy Metering (Input Data)
+For the algorithm to correctly calculate the energy balance (displayed on the panel as Overproduction) and control loads, the system requires access to real-time measurement data:
 
-Zalecane integracje z miernikami dwukierunkowymi:
-*   **Mierniki zintegrowane w falownikach:** Fronius (Smart Meter), SolarEdge, Huawei (DTSU666), Deye, FoxESS.
-*   **Dedykowane liczniki Smart Home:** Shelly Pro 3EM, Zamel MEW-01, Supla, Fibaro Smart Implant z licznikiem impulse.
+* **PV Production Metering**: A meter reporting current energy production from the photovoltaic installation.
+* **Main Home Consumption Meter**: A bidirectional energy meter transmitting the current balance of energy consumption and grid feed-in.
 
-::: tip WARTOŚĆ UJEMNA CZY DODATNIA?
-Moduł automatycznie rozpoznaje konfigurację licznika. Bez względu na to, czy Twój miernik raportuje nadwyżkę jako `-1500W` czy `+1500W`, parametr konfiguracji wejściowej pozwala na dopasowanie wektora mocy bez konieczności edycji kodu LUA.
-:::
+## Actuators (Loads)
 
----
+* **ON/OFF Actuators**: Any gateway-compatible relay, switch, or smart plug (e.g., FIBARO/Nice Wall Plug, Single Switch, Double Switch) assigned to the controlled load (e.g., domestic hot water heat pump or electric heater) with a unique system ID.
 
-## 3. Wspierane Urządzenia Executora (Odbiorniki)
-
-Moduł może sterować dowolnym urządzeniem widocznym w Fibaro HC3 jako:
-*   `com.fibaro.binarySwitch` (Przekaźniki, Smart Plugi, Wall Plugi)
-*   `com.fibaro.multilevelSwitch` (Ściemniacze / Regulator mocy grzałki PWM)
-*   Dedykowane QuickAppy zewnętrznych producentów (np. ładowarki EV, pompy ciepła po Modbus/API).
+* **Additional Sensors (Optional)**: If you configure custom threshold conditions (e.g., disabling the heater when the boiler water temperature exceeds 131°F / 55°C), an appropriate temperature sensor must be installed and paired within the system.

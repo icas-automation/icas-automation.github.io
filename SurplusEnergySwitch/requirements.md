@@ -1,36 +1,29 @@
-# Wymagania i Kompatybilność
+# Wymagania systemowe
 
-Aby zapewnić prawidłowe i bezawaryjne działanie modułu **SurplusEnergySwitch**, instalacja musi spełniać poniższe wymagania techniczne.
+Aby pomyślnie uruchomić i w pełni korzystać z możliwości aplikacji Surplus Energy Switch, Twój ekosystem Smart Home musi spełniać następujące wymagania techniczne:
 
----
+## Kompatybilna Centrala Smart Home
+Aplikacja działa jako natywny Quick App i wymaga jednej z poniższych central zarządzających:
 
-## 1. Wymagania Wirusowe / Systemowe
+* FIBARO Home Center 3 (HC3)
+* FIBARO Home Center 3 Lite (HC3L)
+* Nice Yubii Home lub Yubii Home PRO
 
-| Element | Wymaganie minimalne | Zalecane |
-| :--- | :--- | :--- |
-| **Centrala** | Fibaro Home Center 3 | Fibaro HC3 (FW > 5.140) |
-| **Dostęp do sieci** | Lokalna sieć LAN/Wi-Fi | Połączenie kablowe Ethernet (LAN) |
-| **Pamięć RAM HC3** | Stan stabilny (< 80% użycia) | Stan stabilny |
+Wersja oprogramowania: Wymagany jest system operacyjny centrali (firmware) w wersji `5.150` lub nowszej.
 
----
+## Aktywne konto i połączenie sieciowe
 
-## 2. Wymagane Liczniki Energii (Grid Meters)
+* **Rejestracja centrali:** Urządzenie musi być zarejestrowane na oficjalnym koncie FibaroID lub Nice ID użytkownika.
+* **Dostęp do Internetu**: Połączenie internetowe jest niezbędne wyłącznie podczas instalacji i aktywacji zaszyfrowanego pliku Quick App (późniejsze działanie algorytmów odbywa się w 100% lokalnie i bezchmurowo).
 
-Moduł do prawidłowej pracy wymaga **jednego, głównego źródła danych o bilansie mocy na przyłączu budynku** (wartość wyrażona w Watach `W`). 
+## Opomiarowanie energii (Dane wejściowe)
+Aby algorytm mógł poprawnie obliczać bilans energii (widoczny na panelu jako Nadprodukcja) i sterować odbiornikami, system potrzebuje dostępu do danych pomiarowych w czasie rzeczywistym:
 
-Zalecane integracje z miernikami dwukierunkowymi:
-*   **Mierniki zintegrowane w falownikach:** Fronius (Smart Meter), SolarEdge, Huawei (DTSU666), Deye, FoxESS.
-*   **Dedykowane liczniki Smart Home:** Shelly Pro 3EM, Zamel MEW-01, Supla, Fibaro Smart Implant z licznikiem impulse.
+* **Pomiar produkcji PV**: Licznik raportujący bieżącą produkcję energii z instalacji fotowoltaicznej.
+* **Główny licznik zużycia domu**: Dwukierunkowy licznik energii przekazujący aktualny bilans poboru i oddawania energii do sieci.  
 
-::: tip WARTOŚĆ UJEMNA CZY DODATNIA?
-Moduł automatycznie rozpoznaje konfigurację licznika. Bez względu na to, czy Twój miernik raportuje nadwyżkę jako `-1500W` czy `+1500W`, parametr konfiguracji wejściowej pozwala na dopasowanie wektora mocy bez konieczności edycji kodu LUA.
-:::
+## Urządzenia wykonawcze (Odbiorniki)
 
----
+* **Elementy wykonawcze ON/OFF**: Dowolny kompatybilny z centralą przekaźnik, przełącznik lub inteligentne gniazdko (np. FIBARO/Nice Wall Plug, Single Switch, Double Switch) przypisane do kontrolowanego obciążenia (np. pompy ciepłej wody użytkowej lub grzałki elektrycznej) posiadające unikalne ID w systemie.  
 
-## 3. Wspierane Urządzenia Executora (Odbiorniki)
-
-Moduł może sterować dowolnym urządzeniem widocznym w Fibaro HC3 jako:
-*   `com.fibaro.binarySwitch` (Przekaźniki, Smart Plugi, Wall Plugi)
-*   `com.fibaro.multilevelSwitch` (Ściemniacze / Regulator mocy grzałki PWM)
-*   Dedykowane QuickAppy zewnętrznych producentów (np. ładowarki EV, pompy ciepła po Modbus/API).
+* **Czujniki dodatkowe (Opcjonalnie)**: Jeśli konfigurujesz własne warunki progowe (np. blokadę załączenia grzałki, gdy temperatura wody w bojlerze przekroczy 55°C), w systemie musi być zainstalowany i sparowany odpowiedni czujnik temperatury.

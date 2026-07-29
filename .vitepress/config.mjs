@@ -2,54 +2,6 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   base: '/',
-  title: "ICAS",
-  description: "Zaawansowane moduły automatyki dla Fibaro HC3",
-  themeConfig: {
-    // Logo i nawigacja górna
-    siteTitle: 'ICAS Smart Home',
-    nav: [
-      { text: 'Strona Główna', link: '/' },
-      { 
-        text: 'Moduły', 
-        items: [
-          { text: 'PV Optimizer (Nadwyżki PV)', link: '/SurplusEnergySwitch/index' },
-          // Tutaj w przyszłości dodasz kolejne moduły, np:
-          // { text: 'EV Charger Control', link: '/ev-charger/index' }
-        ] 
-      },
-      { text: 'Wsparcie / FAQ', link: '/SurplusEnergySwitch/troubleshooting' }
-    ],
-
-    // Menu boczne dla dokumentacji PV Optimizer
-    sidebar: {
-      '/SurplusEnergySwitch/': [
-        {
-          text: 'Moduł: PV Optimizer',
-          items: [
-            { text: '1. Ostrzeżenie i Wstęp', link: '/SurplusEnergySwitch/index' },
-            { text: '2. Wymagania i Kompatybilność', link: '/SurplusEnergySwitch/requirements' },
-            { text: '3. Szybki Start (Quick Start)', link: '/SurplusEnergySwitch/quick-start' },
-            { text: '4. Algorytm i Logika Działania', link: '/SurplusEnergySwitch/algorithm' },
-            { text: '5. Konfiguracja Parametrów', link: '/SurplusEnergySwitch/configuration' },
-            { text: '6. Scenariusze Użycia (Use Cases)', link: '/SurplusEnergySwitch/use-cases' },
-            { text: '7. Rozwiązywanie Problemów', link: '/SurplusEnergySwitch/troubleshooting' },
-          ]
-        }
-      ]
-    },
-
-    // Wyszukiwarka na stronie
-    search: {
-      provider: 'local'
-    },
-
-    // Stopka
-    footer: {
-      message: 'ICAS – Premium Smart Home Solutions',
-      copyright: 'Copyright © 2026 ICAS'
-    }
-  },
-
   locales: {
     // ----------------------------------------------------
     // JĘZYK POLSKI (Wersja główna / domyślna)
@@ -58,22 +10,39 @@ export default defineConfig({
       label: '🇵🇱 Polski',
       lang: 'pl-PL',
       title: "ICAS Automation",
-      description: "Dokumentacja modułów Fibaro HC3",
+      description: "ICAS Automation",
       themeConfig: {
+        siteTitle: 'ICAS Automation',
         nav: [
           { text: 'Strona Główna', link: '/' },
-          { text: 'Moduły', link: '/SurplusEnergySwitch/' }
-        ],
-        sidebar: [
           {
-            text: 'Moduły ICAS',
+            text: 'Moduły',
             items: [
-              { text: 'Surplus Energy Switch', link: '/SurplusEnergySwitch/' },
-              { text: 'Irrigation Control', link: '/IrrigationControl/' },
-              { text: 'Sofar Inverter', link: '/SofarInverter/' }
+              { text: 'Surplus Energy Switch', link: '/SurplusEnergySwitch/index' },
             ]
-          }
-        ]
+          },
+          { text: 'Pliki do pobrania', link: '/download' },
+          { text: 'Kup licencję', link: '/buy' },
+          { text: 'Kontakt', link: '/contactUs' },
+        ],
+        sidebar: {
+          '/SurplusEnergySwitch/': [
+            {
+              text: 'Surplus Energy Switch',
+              items: [
+                { text: 'One-Pager', link: '/SurplusEnergySwitch/index' },
+                { text: 'Wymagania systemowe', link: '/SurplusEnergySwitch/requirements' },
+                { text: 'Instalacja i Konfiguracja', link: '/SurplusEnergySwitch/quick-start' },
+                { text: 'Parametry', link: '/SurplusEnergySwitch/parameters' },
+              ]
+            }
+          ]
+        },
+        search: { provider: 'local' },
+        footer: {
+          message: '<a href="/legal/licence">Licencja</a> | <a href="/legal/disclaimer">Wyłączenie Odpowiedzialności</a> | <a href="/legal/privacy">Polityka Prywatności i Ochrony Danych</a> | <a href="/legal/terms">Wymagania Bezpieczeństwa</a>',
+          copyright: 'Copyright © 2026 by ICAS Automation'
+        }
       }
     },
 
@@ -85,22 +54,40 @@ export default defineConfig({
       lang: 'en-US',
       link: '/en/',
       title: "ICAS Automation",
-      description: "Fibaro HC3 modules documentation",
+      description: "ICAS Automation",
       themeConfig: {
+        siteTitle: 'ICAS Automation',
         nav: [
-          { text: 'Home', link: '/en/' },
-          { text: 'Modules', link: '/en/SurplusEnergySwitch/' }
-        ],
-        sidebar: [
+          { text: 'Home Page', link: '/en/' },
           {
-            text: 'ICAS Modules',
+            text: 'Modules',
             items: [
-              { text: 'Surplus Energy Switch', link: '/en/SurplusEnergySwitch/' },
-              { text: 'Irrigation Control', link: '/en/IrrigationControl/' },
-              { text: 'Sofar Inverter', link: '/en/SofarInverter/' }
+              // ZMIANA: Dodano prefix /en/
+              { text: 'Surplus Energy Switch', link: '/en/SurplusEnergySwitch/index' },
             ]
-          }
-        ]
+          },
+          { text: 'Downloads', link: '/en/download' },
+          { text: 'Buy a License', link: '/buy' },
+          { text: 'Contact Us', link: '/contactUs' },
+        ],
+        sidebar: {
+          // ZMIANA: Dodano prefix /en/ w kluczu i linkach
+          '/en/SurplusEnergySwitch/': [
+            {
+              text: 'Surplus Energy Switch',
+              items: [
+                { text: 'One-Pager', link: '/en/SurplusEnergySwitch/index' },
+                { text: 'System requirements', link: '/en/SurplusEnergySwitch/requirements' },
+                { text: 'Installation and Configuration', link: '/en/SurplusEnergySwitch/quick-start' },
+                { text: 'Parameters', link: '/en/SurplusEnergySwitch/parameters' },
+              ]
+            }
+          ]
+        },
+        footer: {
+          message: '<a href="/en/legal/licence">Licence</a> | <a href="/en/legal/disclaimer">Liability Disclaimer</a> | <a href="/en/legal/privacy">Privacy & Data Protection Policy</a> | <a href="/en/legal/terms">Critical Systems and Safety Disclaimer</a>',
+          copyright: 'Copyright © 2026 by ICAS Automation'
+        }
       }
     }
   }

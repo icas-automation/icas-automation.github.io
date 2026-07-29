@@ -2,78 +2,52 @@
 layout: home
 
 hero:
-  name: "ICAS"
-  text: "Smart Home Energy Control"
-  tagline: "English Zaawansowane oprogramowanie klasy Premium dla centrali Fibaro HC3."
+  name: "ICAS Automation"
+  text: "Intelligent Component Autonomous Software"
+  tagline: "Welcome to the automation world of tomorrow, which thinks, protects, and operates in the background – completely without your constant intervention."
   image:
-    src: /logo.png
+    src: /images/logo.png
     alt: ICAS Smart Home
-  actions:
-    - theme: brand
-      text: Poznaj SurplusEnergySwitch
-      link: /SurplusEnergySwitch/index
-    - theme: alt
-      text: Zobacz Dokumentację
-      link: /SurplusEnergySwitch/quick-start
+    width: 300       # Width in pixels (do not add 'px')
+    style: "border-radius: 10px;" # Optional: you can inject any CSS
+
+customText: ICAS Automation is a brand created from an engineering passion for excellence. We build an ecosystem of advanced, fully autonomous software extensions (QuickApps) for leading Smart Home systems, such as FIBARO and Nice. Our name is our technological declaration.
 
 features:
-  - title: ⚡ Maksymalizacja Autokonsumpcji
-    details: Inteligentny algorytm podejmuje decyzje w oparciu o bilans mocy z licznika w czasie rzeczywistym. Przekierowuje 100% nadwyżek prądu z PV bezpośrednio do Twoich odbiorników.
+  - title: Intelligent
+    details: Our algorithms don't just execute blind instructions. They continuously analyze device behavior in real time.
   
-  - title: 🛡️ Bezpieczeństwo i Fail-Safe
-    details: Wbudowane mechanizmy zabezpieczające zapobiegają niekontrolowanemu poborowi z sieci przy utracie sygnału Wi-Fi lub braku odczytów z licznika.
+  - title: Component
+    details: We design based on a flexible modular architecture. Individual areas of automation – from energy and climate management to lighting and security – merge into one integrated, seamless ecosystem.
 
-  - title: 🎛️ ZAAWANSOWANA HISTEREZA
-    details: Ochrona urządzeń wykonawczych (pomp ciepła, kompresorów) przed zbyt częstym cyklowaniem (tzw. "miganie przekaźnikami") podczas chwilowego zachmurzenia.
+  - title: Autonomous
+    details: We believe in absolute self-sufficiency. We provide background-running software that adapts to the rhythm of the household members' lives.
 
-  - title: 🔀 Wielopoziomowe Priorytety
-    details: Swobodna konfiguracja kolejności załączania urządzeń – od bojlerów CWU, przez klimatyzację, aż po ładowarki samochodów elektrycznych (EV).
+  - title: Software
+    details: We create stable, secure, and local (cloud-free) applications that unlock the full potential of the devices you already have in your home.
 ---
+<br><br>
 
-## Dlaczego rozwiązania fabryczne nie wystarczają?
+# <font style="color: var(--vp-c-brand-1);"><h1><b>The ICAS Philosophy</b></h1></font> Uncompromising Comfort
 
-Wielu użytkowników automatyki domowej próbuje zarządzać energią za pomocą prostych scenariuszy bloku lub LUA typu *"Jeśli moc > 2000W to włącz grzałkę"*. 
+## 🔌 Component Architecture (Component-First)
 
-Taki zabieg prowadzi do **częstego uszkadzania przekaźników**, braku stabilności instalacji i nieefektywnego gospodarowania energią przy zmiennej pogodzie. 
+Our solutions do not operate in isolation. Every ICAS Quick App is an advanced module capable of working independently (Single-Mode) or instantly collaborating with other components (Multi-Mode). It is precisely this "peer-to-peer communication" within the home network that enables fully automated cascade management.
 
-> **ICAS SurplusEnergySwitch** został zaprojektowany z myślą o wyeliminowaniu tych wad – działa jak dedykowany, przemysłowy sterownik PLC osadzony wewnątrz Twojego Fibaro HC3.
+## 🛡️ Absolute Autonomy with a "Set It and Forget It" Mindset
 
----
+A true Smart Home is one that relieves you of the obligation to constantly check the app. ICAS software operates invisibly. It protects expensive electronics and sensitive device components from being turned on and off too frequently.
 
-## Kluczowe Możliwości w Pigułce
+## 📊 Full Transparency and Control (Real-Time Insight)
 
-| Cecha | Proste Scenariusze LUA | ICAS SurplusEnergySwitch |
-| :--- | :---: | :---: |
-| **Płynna Histereza Czasowo-Mocowa** | ❌ Brak | **Tak (Pełna kontrola)** |
-| **System Ochrony Odbiorników (Fail-Safe)** | ❌ Brak | **Tak (Zero niespodzianek na rachunku)** |
-| **Dynamika zmian przy zachmurzeniu** | Wyłącza natychmiast | **Algorytm podtrzymania min. czasu pracy** |
-| **Obsługa Multi-Odbiorników z Priorytetem** | Trudna w utrzymaniu | **Rozbudowana matryca konfiguracji** |
-| **Dedykowany interfejs diagnostyczny** | Brak | **Pełen podgląd stanu w interfejsie HC3** |
+Engineering precision deserves a transparent layout. Our interfaces are perfectly consistent with the Yubii app and the Fibaro system. During the design phase, we focus on maximizing operational efficiency and delivering exactly what is needed.
 
----
-::: tip WSKAZÓWKA
-Pamiętaj o zarezerwowaniu stałego adresu IP w routerze dla centrali HC3.
-:::
+## 🔒 Privacy and Local Security (Cloud-Free)
 
-::: warning UWAGA
-Zmiana tego parametru wymaga restartu silnika LUA.
-:::
+Your data and household habits belong exclusively to you. All calculations, state machines, and ICAS decision-making algorithms are executed 100% locally within the processor of your Fibaro Home Center 3 hub. The complete lack of dependency on external cloud servers guarantees lightning-fast response times measured in milliseconds and the highest level of resilience against external network outages.
+<br><br><br>
+# Our Mission
 
-::: danger DANGER
-Błędna konfiguracja przekaźnika może uszkodzić pompę ciepła!
-:::
+We create the missing links in building automation. We ensure smart homes stop being merely "smartphone-controlled" and become truly autonomous, economical, and secure.
 
-## Moduł PV Optimizer <Badge type="tip" text="HC3 Only" /> <Badge type="warning" text="v1.2" />
-
-::: details Kliknij, aby zobaczyć pełny log zdarzeń
-```text
-2026-07-22 10:00:00 [INFO] Grid balance: +2400W
-2026-07-22 10:00:05 [INFO] Activating Heat Pump Stage 1
-```
-:::
-
-<div style="text-align: center; margin-top: 3rem;">
-  <a href="./SurplusEnergySwitch/index" style="background-color: var(--vp-c-brand-1); color: white; padding: 12px 24px; border-radius: 8px; font-weight: bold; text-decoration: none;">
-    Przejdź do pełnej dokumentacji i instalacji &rarr;
-  </a>
-</div>
+# <font style="color: var(--vp-c-brand-1);"><h1><b>ICAS Automation – Set it. Forget it. Enjoy effortless comfort.</b></h1></font>

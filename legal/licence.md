@@ -1,0 +1,28 @@
+---
+layout: doc
+title: Warunki Licencji (EULA)
+---
+
+# Licencja Użytkownika Oprogramowania (EULA)
+
+*Ostatnia aktualizacja: 2026 r.*
+
+Przed zainstalowaniem, skopiowaniem lub użyciem rozszerzeń oprogramowania (QuickApps) firmy **ICAS Automation** (zwanych dalej „Oprogramowaniem”), należy uważnie zapoznać się z niniejszą Umową. Zainstalowanie lub korzystanie z Oprogramowania oznacza pełną akceptację poniższych warunków.
+
+## 1. Udzielenie Licencji
+1.1. Licencjodawca udziela Użytkownikowi niewyłącznej, nieprzenoszalnej i odwoływalnej licencji na korzystanie z Oprogramowania wyłącznie w ramach pojedynczej centrali automatyki domowej (Fibaro Home Center 3 / Yubii Home).
+
+1.2. Licencja nie obejmuje prawa do:
+* Odsprzedaży, podlicencjonowania, wynajmu lub odpłatnego udostępniania Oprogramowania osobom trzecim bez pisemnej zgody Licencjodawcy.
+* Modyfikacji, dekompilacji, inżynierii wstecznej (reverse engineering) ani usuwania oznaczeń praw autorskich zawartych w kodzie źródłowym.
+
+## 2. Prawa Własności Intelektualnej
+Wszelkie prawa autorskie, nazwy handlowe, kody źródłowe, logiki algorytmiczne oraz znaki towarowe związane z ICAS Automation stanowią wyłączną własność Licencjodawcy i podlegają ochronie prawnej.
+
+## 3. Aktualizacje i Wsparcie
+3.1. Licencjodawca nie ma obowiązku dostarczania bezpłatnych aktualizacji, poprawek ani wsparcia technicznego, chyba że odrębna umowa stanowi inaczej.
+
+3.2. Licencjodawca zastrzega sobie prawo do modyfikacji funkcji Oprogramowania w kolejnych wersjach.
+
+## 4. Wygaśnięcie Licencji
+Licencja wygasa automatycznie w przypadku naruszenia przez Użytkownika któregokolwiek z postanowień niniejszej Umowy. W takim przypadku Użytkownik zobowiązany jest do natychmiastowego usunięcia Oprogramowania ze swojej centrali Smart Home.
