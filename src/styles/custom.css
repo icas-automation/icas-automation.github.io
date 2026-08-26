@@ -97,7 +97,7 @@ starlight-lang-select {
 :root:not([data-theme='light']) .hero {
 	background-image: 
 		linear-gradient(to right, rgba(19, 22, 20, 0.95) 0%, rgba(19, 22, 20, 0.7) 30%, rgba(19, 22, 20, 0) 100%),
-		url('/src/assets/home-bg-dark.jpg') !important;
+		url('/assets/home-bg-dark.jpg') !important;
 	background-size: cover !important;
 	background-position: center !important;
 	background-repeat: no-repeat !important;
@@ -106,7 +106,7 @@ starlight-lang-select {
 :root[data-theme='light'] .hero {
 	background-image: 
 		linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 30%, rgba(255, 255, 255, 0) 100%),
-		url('/src/assets/home-bg-light.jpg') !important;
+		url('/assets/home-bg-light.jpg') !important;
 	background-size: cover !important;
 	background-position: center !important;
 	background-repeat: no-repeat !important;
