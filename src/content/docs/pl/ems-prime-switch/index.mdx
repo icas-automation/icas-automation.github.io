@@ -1,0 +1,103 @@
+---
+title: EMS Prime Switch
+description: Brakujące Ogniwo Inteligentnego Zarządzania Nadprodukcją w Ekosystemie Fibaro.
+sidebar:
+  order: 1
+  label: Przegląd
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import { LinkButton } from '@astrojs/starlight/components';
+
+<h2 class="green-text">Brakujące Ogniwo Inteligentnego Zarządzania Nadprodukcją w Ekosystemie Fibaro.</h2>
+
+<img src="/src/assets/ems-prime-switch-box.png"/>
+
+## Czy Twój inteligentny dom naprawdę optymalizuje koszty energii, czy tylko biernie je obserwuje?
+
+Jeśli posiadasz fotowoltaikę zintegrowaną z centralą Fibaro HC3, prawdopodobnie codziennie oddajesz wartościową energię do sieci za grosze. Co gorsza – nieprzemyślane automatyzacje włączające Twoje urządzenia, takie jak grzałki czy pompy ciepła, podczas zmiennego zachmurzenia potrafią zniszczyć ich drogą elektronikę przez tzw. „szarpanie przekaźników”.
+
+**ICAS EMS Prime Switch zmienia zasady gry**. To zaawansowana aplikacja Quick App, która uzupełnia ekosystem Fibaro o brakujące algorytmy decyzyjne i zamienia bierny monitoring w bezobsługową, kaskadową maszynę do generowania oszczędności.
+
+## Doświadcz różnicy w pierwszych minutach od instalacji
+
+Instalacja sprowadza się do pobrania pliku, zaimportowania go do Fibaro HC3 i podania ID sterowanego urządzenia. Zero skryptów LUA, zero frustracji – aplikacja natychmiast przeprowadzi Cię przez prostą konfigurację i kalibrację.
+Po otwarciu panelu w systemie Fibaro otrzymujesz przejrzyste centrum sterowania, które daje Ci pełną kontrolę nad zarządzaniem energią:
+
+### Dynamiczny monitoring bilansu mocy
+
+Śledzisz na żywo realny przepływ energii w całej instalacji. System w czasie rzeczywistym analizuje produkcję z fotowoltaiki, aktualne zużycie budynku oraz precyzyjny poziom nadprodukcji lub poboru z sieci.
+
+XXX obrazek XXX
+
+### Pełny wgląd w stan i parametry pracy
+
+W jednym miejscu kontrolujesz aktualny stan zarządzanego urządzenia oraz jego tryb działania. Dodatkowo stale podglądasz kluczowe reguły decyzyjne: wyliczoną moc wymaganą, ustawione progi pokrycia nadprodukcją oraz zdefiniowane czasy stabilizacji i minimalnego czasu pracy urządzenia.
+
+XXX obrazek XXX
+
+### Panel zarządzania nadwyżką energii
+
+Na bieżąco widzisz, które warunki włączenia są spełnione, czas pozostały do uruchomienia po stabilizacji nadprodukcji oraz czas gwarantowanego cyklu pracy zabezpieczającego sprzęt przed uszkodzeniem. W przypadku wykrycia w Twojej centrali Fibaro innych instancji EMS Prime Switch, system automatycznie przełącza się z pracy pojedynczej na tryb współdzielony. Pokazuje wtedy, jak energia balansuje pomiędzy urządzeniami w sieci na podstawie nadanych priorytetów i dostępnej nadwyżki – wszystko w pełni transparentnie.
+
+XXX obrazek XXX
+
+### Precyzyjna analityka autokonsumpcji i realnych zysków
+
+Aplikacja automatycznie mierzy darmowe kilowatogodziny ze słońca zatrzymane w Twoim domu i w czasie rzeczywistym przelicza je na szacowane oszczędności finansowe. Statystyki kWh są automatycznie porządkowane i zerowane w cyklach dobowym, tygodniowym, miesięcznym oraz rocznym, dzięki czemu w każdej chwili widzisz dokładne kwoty, które zostały w Twoim portfelu.
+
+XXX obrazek XXX
+
+### Elastyczna zmiana trybu pracy
+
+Domyślnym trybem jest pełna automatyzacja (Auto) oparta na inteligentnych algorytmach EMS Prime Switch. W każdej chwili możesz jednak wymusić pracę ręczną (Uruchom) lub całkowicie zablokować urządzenie na czas wyjazdu urlopowego bądź prac konserwacyjnych (Zablokuj).
+
+XXX obrazek XXX
+
+## Dlaczego ten Quick App jest niezbędny w Twoim Smart Home?
+
+  <Card title="Prawdziwy Smart Home">
+    Twoja automatyka w końcu zaczenie w pełni wykorzystywać informacje gromadzone przez Fibaro HC3. Przestaniesz jedynie oglądać statystyki fotowoltaiki, a zaczniesz realnie wykorzystywać nadprodukcję i generować oszczędności.
+  </Card>
+  <Card title="Zaawansowana Ochrona Sprzętu">
+    Aplikacja dba o żywotność Twoich urządzeń. Parametry Minimalnego czasu stabilizacji nadprodukcji oraz Minimalnego czasu pracy po włączeniu skutecznie chronią przekaźniki i sprężarki przed zbyt częstymi cyklami przełączania.
+  </Card>
+  <Card title="Precyzyjne Pokrycie Częściowe (Partial Coverage)">
+    Sam decydujesz, jaki procent mocy urządzenia musi pochodzić ze słońca. Aplikacja może uruchomić odbiornik np. przy 60% pokrycia z PV, pozwalając dokupić z sieci tylko niezbędne minimum.
+  </Card>
+  <Card title="Customowe Warunki Logiczne">
+    Łącz nadprodukcję z dowolnymi czujnikami Fibaro. Uruchomienie bojlera tylko przy obecności nadprodukcji ORAZ gdy temperatura wody jest niższa niż 55C wymaga ustawienia jednej prostej reguły.
+  </Card>
+  <Card title="Zaawansowana Praca Kaskadowa (Multi-Mode)">
+    Poszczególne instancje Quick App płynnie ze sobą współpracują. Nadwyżka energii trafia w pierwszej kolejności do urządzenia o najwyższym priorytecie (np. pompa ciepła), a pozostały nadmiar automatycznie zasila kolejne odbiorniki (np. ładowarkę EV lub grzałkę CWU).
+  </Card>
+  <Card title="Natywne Doświadczenie Fibaro">
+    Pełna integracja wizualna z interfejsem automatycznie wykrywającym aż 24 języki, podgląd lokalizacji urządzenia w strukturze domu oraz powiadomienia PUSH informujące o pracy na darmowym prądzie ze słońca.
+  </Card>
+  
+## Pełne możliwości konfiguracji
+
+Pierwotna instalacja uruchamia system z optymalnymi ustawieniami domyślnymi, pozwalając od razu sprawdzić pełnię możliwości algorytmu. W dowolnym momencie możesz jednak dostosować większość parametrów do własnych potrzeb. Pełny opis każdego parametru oraz instrukcje znajdziesz na naszej stronie produktowej.
+
+## Uczciwy model inwestycji: Zainstaluj i Zapomnij
+
+Przetestuj rozwiązanie bez ryzyka i zobacz, jak algorytm sprawdzi się w Twoim domu
+
+  <Card title="Bezpłatny 14-dniowy okres próbny">
+    Pobierz w pełni funkcjonalną wersję testową i sprawdź oszczędności przed zakupem.
+  </Card>
+  <Card title="Licencja Lifetime (399 PLN)">
+    Jednorazowa opłata na całe życie. Brak subskrypcji, darmowe aktualizacje i nielimitowana liczba instancji (sterujesz dowolną liczbą urządzeń w ramach swojej centrali HC3 bez dodatkowych opłat).
+  </Card>
+
+  <LinkButton href="/pl/buy">
+    Kup licencje
+  </LinkButton>
+  <LinkButton href="/pl/downloads">
+    Pobierz najnowszą wersję
+  </LinkButton>
+
+## Rekomendacje Eksperckie
+
+EMS Prime Switch redefiniuje podejście do zarządzania zasobami energetycznymi w inteligentnym budynku. Zamiast biernej prezentacji wykresów historycznych, oprogramowanie to wprowadza aktywny, dynamiczny i w pełni bezpieczny dla urządzeń proces decyzyjny. Dla właścicieli systemów Fibaro i Nice, którzy zainwestowali już środki w automatykę, jest to najbardziej opłacalna inwestycja optymalizacyjna. Pozwala wycisnąć maksimum możliwości z posiadanych urządzeń, drastycznie skraca czas zwrotu z inwestycji w fotowoltaikę i chroni elektronikę przed przedwczesnym zużyciem.

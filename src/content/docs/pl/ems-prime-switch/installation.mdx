@@ -1,0 +1,58 @@
+---
+title: Instalacja i Konfiguracja
+description: Wymagania sprzętowe i programowe dla EMS Prime Switch.
+sidebar:
+  order: 3
+  label: Instalacja i Konfiguracja
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Uruchom inteligentne sterowanie nadprodukcją w swoim domu w mniej niż 5 minut. Proces jest w pełni zautomatyzowany i nie wymaga od Ciebie pisania skryptów ani znajomości języka LUA.
+
+
+## Pobranie najnowszej wersji oprogamowania
+
+<Steps>
+  1. Wejdź na oficjalną stronę (https://icas-automation.github.io/).
+  2. Przejdź do sekcji **Plików do pobrania**.
+  3. Pobierz najnowszą, stabilną wersję oprogramowania w formacie pliku .fqax (Quick App).
+</Steps>
+
+## Instalacja w centrali FIBARO / Nice
+<Steps>
+  1. Zaloguj się do panelu administracyjnego swojej centrali FIBARO Home Center 3 / Lite lub Yubii Home.
+  2. W menu bocznym przejdź do sekcji **Ustawienia**, a następnie wybierz **Urządzenia** (możesz również skorzystać z ikony szybkiego dostępu na pulpicie głównym).
+  3. Kliknij charakterystyczny, niebieski przycisk **+ (Dodaj urządzenie)** w prawym górnym rogu ekranu.
+  4. Wybierz opcję **Inne urządzenie**, a następnie kliknij kafelek **Wgraj z pliku**.
+  5. Wskaż pobrany wcześniej plik o rozszerzeniu .fqax. Centrala automatycznie zaimportuje urządzenie i przygotuje je do pracy.
+</Steps>
+
+## Konfiguracja podstawowa (Pierwsze uruchomienie)
+
+Po pomyślnym wgraniu pliku, system automatycznie zainicjuje proces konfiguracji i mapowania zmiennych.
+<Steps>
+  1. Przejdź do nowo utworzonego urządzenia Surplus Energy Switch i otwórz jego pulpit w trybie **Podgląd**.
+  2. Na ekranie głównym urządzenia zobaczysz komunikat o błędzie informujący o braku przypisanego odbiornika: **SWITCH_ID**.
+  3. Przejdź do zakładki **Zmienne** w ustawieniach zaawansowanych urządzenia.
+  4. Odnajdź zmienną o nazwie **switch_id**.
+  5. Kliknij ikonę ołówka ✏️ po prawej stronie, aby przejść do edycji.
+  6. Wpisz ID urządzenia wykonawczego (np. Wall Plug, Single Switch lub dedykowany przekaźnik pompy CWU), którym algorytm ma zarządzać w momencie wykrycia nadprodukcji, i zatwierdź zmiany.
+</Steps>
+
+## Konfiguracja zaawansowana (Opcjonalnie)
+
+Nasz Quick App został zaprojektowany w myśl zasady "Zainstaluj i Zapomnij", oferując zoptymalizowane parametry domyślne. Jeśli jednak chcesz precyzyjnie dostosować działanie systemu do specyfiki swoich odbiorników:
+<Steps>
+  1. Zapoznaj się z opisem parametrów systemowych dostępnym w naszej dokumentacji technicznej.
+  2. Aby zmienić dowolny parametr, przejdź do zakładki **Zmienne** i dokonaj edycji.
+</Steps>
+
+## Aktywacja licencji Lifetime (Opcjonalnie)
+
+<Steps>
+  1. Po zakupie pełnej wersji oprogramowania EMS Prime Switch otrzymasz drogą mailową swój unikalny klucz licencyjny.
+  2. Aby aktywować dożywotnią licencję, przejdź do zakładki **Zmienne** urządzenia.
+  3. Odnajdź zmienną **licence_key** i wprowadź w niej otrzymany kod.
+  4. System automatycznie zweryfikuje klucz i odblokuje pełną, nielimitowaną funkcjonalność na Twojej centrali.
+</Steps>

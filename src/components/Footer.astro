@@ -1,0 +1,30 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+
+// Odczyt języka bezpośrednio z trasy Starlight lub ze ścieżki URL
+const { starlightRoute } = Astro.props;
+const currentLang = starlightRoute?.id?.split('/')[0] || Astro.url.pathname.split('/')[1] || 'pl';
+
+const isEn = currentLang === 'en';
+
+// Definicje linków z prawidłowymi prefiksami /en/ oraz /pl/
+const links = isEn ? [
+    { label: 'License', url: '/en/legal/licence/' },
+    { label: 'Liability Disclaimer', url: '/en/legal/disclaimer/' },
+    { label: 'Privacy & Data Protection Policy', url: '/en/legal/privacy-policy/' },
+    { label: 'Critical Systems and Safety Disclaimer', url: '/en/legal/terms/' }
+] : [
+    { label: 'Licencja', url: '/pl/legal/licence/' },
+    { label: 'Wyłączenie Odpowiedzialności', url: '/pl/legal/disclaimer/' },
+    { label: 'Polityka Prywatności i Ochrony Danych', url: '/pl/legal/privacy-policy/' },
+    { label: 'Wymagania Bezpieczeństwa', url: '/pl/legal/terms/' }
+];
+---
+
+<footer class="sticky-footer">
+  <nav class="footer-links-inline">
+    {links.map((link) => (
+      <a href={link.url}>{link.label}</a>
+    ))}
+  </nav>
+</footer>

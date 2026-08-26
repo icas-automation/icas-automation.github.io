@@ -1,0 +1,31 @@
+---
+title: System Requirements
+description: Hardware and software requirements for EMS Prime Switch.
+sidebar:
+  order: 2
+  label: System Requirements
+---
+
+To successfully launch and fully utilize the capabilities of the Surplus Energy Switch application, your Smart Home ecosystem must meet the following technical requirements:
+
+## Compatible Smart Home Gateway
+
+The application operates as a native QuickApp and requires one of the following management gateways:
+ - FIBARO Home Center 3 (HC3)
+ - FIBARO Home Center 3 Lite (HC3L)
+ - Nice Yubii Home or Yubii Home PRO
+
+Software Version: Gateway operating system (firmware) version 5.150 or newer is required.
+
+## Active Account and Network Connection
+
+ - **Gateway Registration**: The device must be registered to an official user FibaroID or Nice ID account.
+ - **Internet Access**: An internet connection is required solely during the installation and activation of the encrypted QuickApp file on the Fibaro server (subsequent algorithm operation runs 100% locally and cloud-free).
+
+## Energy Metering (Input Data)
+
+For the algorithm to correctly calculate energy balance and control loads, the system requires a proper photovoltaic configuration in your Fibaro HC3 Energy Panel.
+
+## Actuators (Controlled Devices)
+ - **ON/OFF Actuators**: Any relay, switch, or smart plug compatible with the gateway (e.g., FIBARO/Nice Wall Plug, Single Switch, Double Switch, and others) assigned to the controlled load (e.g., domestic hot water pump or electric heater) with a unique ID in the system.
+ - **Additional Sensors (Optional)**: If you configure custom threshold conditions (e.g., preventing heater activation when water temperature in the boiler exceeds 55°C), an appropriate temperature sensor must be installed and paired in the system.

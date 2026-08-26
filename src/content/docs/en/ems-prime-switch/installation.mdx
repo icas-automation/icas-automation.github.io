@@ -1,0 +1,58 @@
+---
+title: Installation & Configuration
+description: Hardware and software requirements for EMS Prime Switch.
+sidebar:
+  order: 3
+  label: Installation & Configuration
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Set up smart surplus energy management in your home in less than 5 minutes[cite: 6]. The process is fully automated and does not require writing scripts or any knowledge of LUA language[cite: 6].
+
+
+## Downloading the Latest Software Version
+
+<Steps>
+  1. Visit the official website (https://icas-automation.github.io/).
+  2. Go to the **Downloads** section.
+  3. Download the latest stable software version in .fqax format (QuickApp).
+</Steps>
+
+## Installation on FIBARO / Nice Gateway
+<Steps>
+  1. Log in to the administrative panel of your FIBARO Home Center 3 / Lite or Yubii Home gateway.
+  2. In the side menu, go to **Settings**, then select **Devices** (you can also use the quick-access icon on the main dashboard).
+  3. Click the blue **+ (Add Device)** button in the top right corner of the screen.
+  4. Select **Other Device**, then click the **Upload from File** tile.
+  5. Select the previously downloaded .fqax file. The gateway will automatically import the device and prepare it for operation.
+</Steps>
+
+## Basic Configuration (First Launch)
+
+After successfully uploading the file, the system will automatically initialize the configuration and variable mapping process[cite: 6].
+<Steps>
+  1. Go to the newly created Surplus Energy Switch device and open its dashboard in **Preview** mode.
+  2. On the device's main screen, you will see an error message indicating that no actuator is assigned: **SWITCH_ID**.
+  3. Go to the **Variables** tab in the device's advanced settings.
+  4. Find the variable named **switch_id**.
+  5. Click the pencil icon ✏️ on the right side to edit.
+  6. Enter the ID of the actuator device (e.g., Wall Plug, Single Switch, or a dedicated DHW pump relay) that the algorithm should manage when surplus energy is detected, and save the changes.
+</Steps>
+
+## Advanced Configuration (Optional)
+
+Our QuickApp was designed around the "Set and Forget" philosophy, offering optimized default parameters[cite: 6]. However, if you want to fine-tune the system's behavior to the specifics of your appliances[cite: 6]:
+<Steps>
+  1. Read the system parameter descriptions available in our technical documentation.
+  2. To change any parameter, go to the **Variables** tab and edit the desired value.
+</Steps>
+
+## Lifetime License Activation (Optional)
+
+<Steps>
+  1. After purchasing the full version of the EMS Prime Switch software, you will receive your unique license key via email.
+  2. To activate your lifetime license, go to the device's **Variables** tab.
+  3. Find the **licence_key** variable and enter the received code.
+  4. The system will automatically verify the key and unlock full, unlimited functionality on your gateway.
+</Steps>

@@ -1,0 +1,210 @@
+---
+title: Parametry konfiguracyjne
+description: Parametry konfiguracyjne dla EMS Prime Switch.
+sidebar:
+  order: 4
+  label: Parametry konfiguracyjne
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Moduł oferuje szerokie możliwości dostosowania działania do indywidualnych potrzeb użytkownika, charakterystyki instalacji oraz oczekiwanych rezultatów.
+
+Po pomyślnej instalacji moduł przyjmuje konfigurację domyślną, która zapewnia podstawowe i bezpieczne funkcjonowanie. Użytkownik może jednak w dowolnym momencie zmodyfikować poszczególne parametry.
+
+W kolejnych akapitach znajduje się szczegółowe omówienie każdego parametru uwzględniajace podstawewe informacje, wpływ na działanie systemu oraz wskazówki i zalecenia.
+
+## Jak czytać opisy parametrów
+
+W tej sekcji opisano właściwości ujęte w opisach parametrów inicjalizacyjnych.
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Określa typ parametru:<ul><li>**Wartość logiczna (Boolean)**: przyjmuje jako wartość `true` lub `false`.</li><li>**Tekst (String)**: przyjmuje jako wartość dowolny ciąg znaków, zgodnie ze składnią określoną dla danego parametru.</li><li>**Liczba całkowita (integer)**: przyjmuje wartość liczbową.</li></ul> |
+| **Wartość domyślna** | Określa wartość, jaką przyjmuje parametr, jeśli wartość nie zostanie jawnie podana |
+| **Możliwość edycji** | Określa możliwość edycji parametru: wartość `true` oznacza, że parametr może być modyfikowany przez użytkownika, natomiast `false` wskazuje, że wartość jest zarządzana wyłącznie przez system. |
+| **Zakres wartości** | Określa zakres dopuszczalnych wartości, jakie może przyjąć ten parametr, przedstawiony jako wartość minimalna i maksymalna lub lista wartości. Właściwość ta nie dotyczy wszystkich parametrów. |
+
+## Jak zmienić wartości parametrów w interfejsie Fibaro?
+
+Modyfikacja parametrów odbywa się poprzez standardowy interfejs użytkownika centrali Fibaro (Home Center 3 / Yubii Home) w sekcji dedykowanej zmiennym urządzenia. Aby wprowadzić zmiany, wykonaj poniższe kroki:
+
+<Steps>
+  1. Zaloguj się do panelu administracyjnego **Fibaro**.
+  2. Przejdź do zakładki *Urządzenia* w menu bocznym.
+  3. Znajdź na liście i otwórz urządzenie.
+  4. Przejdź do zakładki **Zmienne** w górnej części widoku urządzenia.
+  5. Odnajdź zmienną odpowiadającą parametrowi, który chcesz zmienić.
+  6. Wprowadź nową wartość w polu tekstowym obok danej zmiennej.
+  7. Zapisz zmiany, klikając przycisk **Zapisz**.
+</Steps>
+
+<Aside type="caution" title="WSKAZÓWKA">
+  Przed wprowadzeniem zmian upewnij się, że wprowadzane wartości są zgodne z zakresem dopuszczalnym dla danego parametru. Złe wartości mogą wpłynąć na poprawność działania modułu.
+</Aside>
+
+### LANGUAGE
+
+Parametr `LANGUAGE` definiuje język interfejsu oraz komunikatów generowanych przez moduł
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Tekst |
+| **Wartość domyślna** | `AUTO` |
+| **Możliwość edycji** | `true` |
+| **Zakres wartości** | AR, CS, DA, DE, EN, ES, ET, FI, FR, HU, IT, JA, KA, LT, NL, NO, PL, PT, RO, RU, SL, SV, TR, ZH, AUTO |
+
+<Aside type="caution" title="WSKAZÓWKA">
+  Ustawienie wartości `AUTO` wymusi odczyt języka z interfejsu FIBARO i ustawi go jako bieżący, o ile jest on obsługiwany.
+</Aside>
+
+### LICENSE_KEY
+
+Parametr `LICENSE_KEY` definiuje klucz licencyjny modułu przypisany do numeru seryjnego urządzenia.
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Tekst |
+| **Wartość domyślna** | `TRIAL` |
+| **Możliwość edycji** | `true` |
+
+### SYS_MODE
+
+Parametr `SYS_MODE` określa aktualny tryb operacyjny urządzenia
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Tekst |
+| **Wartość domyślna** | `AUTO` |
+| **Możliwość edycji** | `false` |
+
+### NOTIFICATION
+
+Parametr `NOTIFICATION` określa, czy system wysyła powiadomienia PUSH do użytkownika.
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Tekst |
+| **Wartość domyślna** | `true` |
+| **Możliwość edycji** | `true` |
+
+### CLASS
+
+Parametr `CLASS` definiuje do jakiej klasu nalezy EMS Prime Switch
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Tekst |
+| **Wartość domyślna** | `icas.ems.primeSwitch` |
+| **Możliwość edycji** | `false` |
+
+### PRIORITY
+
+Parametr `PRIORITY` definuje jaki priorytet liczbowy przyjmje sterowane urządzenie.
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Liczba całkowita |
+| **Wartość domyślna** | 1 |
+| **Możliwość edycji** | `true` |
+| **Zakres wartości** | 1 - 999 |
+
+### ENERGY_TRACKER
+
+Parametr `ENERGY_TRACKER` przechowuje wartości statystyk autokonsumpcji
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Tekst |
+| **Możliwość edycji** | `false` |
+
+### SWITCH_ID
+
+Parametr `SWITCH_ID` określa identyfikator urządzenia, które zostanie uruchomione po wykryciu nadprodukcji.
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Liczba całkowita |
+| **Wartość domyślna** | 0 (brak wskazanego urządzenia) |
+| **Możliwość edycji** | `true` |
+| **Zakres wartości** | Większe od 0 |
+
+### SWITCH_PWR
+
+Parametr `SWITCH_PWR` określa pobór mocy urządzenia (w watach) podczas normalnej pracy.”
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Liczba całkowita |
+| **Wartość domyślna** | `AUTO` |
+| **Możliwość edycji** | `true` |
+| **Zakres wartości** | Większe od 0 lub `AUTO` |
+
+<Aside type="caution" title="WSKAZÓWKA">
+  Ustawienie wartości `AUTO` wymusi automatyczny odczyt wymaganej mocy z urządzenia. Jeśli odczyt nie będzie możliwy, wówczas system zwróci błąd i poprosi o wskazanie tej mocy ręcznie.
+</Aside>
+
+### SWITCH_PWR_THLD
+
+Parametr `SWITCH_PWR_THLD` określa wyrażony w procentach próg mocy urządzenia, który musi zostać pokryty z nadprodukcji z fotowoltaiki, aby urządzenie się włączyło. Domyślna wartość 100% oznacza, że urządzenie zostanie uruchomione dopiero wtedy, gdy nadprodukcja w pełni pokryje moc zdefiniowaną w parametrze `SWITCH_PWR`.
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Liczba całkowita |
+| **Wartość domyślna** | `100` |
+| **Możliwość edycji** | `true` |
+| **Zakres wartości** | Większe od 0 |
+
+<Aside type="caution" title="WSKAZÓWKA">
+  W przypadku mniejszych instalacji z niewielką nadprodukcją warto obniżyć ten parametr np. do 50%. Urządzenie włączy się wtedy, gdy fotowoltaika pokryje przynajmniej połowę wymaganej mocy – reszta zostanie pobrana z sieci, co pozwoli maksymalnie wykorzystać dostępną energię.
+
+  Jeśli posiadasz dużą instalację oraz wiele urządzeń konkurujących o energię, lepiej pozostawić wartość 100% lub wyższą.
+</Aside>
+
+### MIN_IDLE_TIME
+
+Parametr `MIN_IDLE_TIME` określa minimalny czas (w sekundach), przez jaki nadprodukcja musi utrzymywać się na dodatnim poziomie, aby urządzenie zostało uruchomione. Ma to na celu zapobieganie przypadkowemu włączaniu urządzenia przez krótkotrwałe skoki nadprodukcji.
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Liczba całkowita |
+| **Wartość domyślna** | `300` |
+| **Możliwość edycji** | `true` |
+| **Zakres wartości** | Większe od 30 |
+
+### MIN_RUN_TIME
+
+Parametr `MIN_RUN_TIME` określa minimalny czas pracy urządzenia (w sekundach) po jego włączeniu, niezależnie od dostępności nadprodukcji. Ma to na celu zapobieganie zbyt częstemu przełączaniu urządzenia, co chroni jego podzespoły przed uszkodzeniem.
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Liczba całkowita |
+| **Wartość domyślna** | `1200` |
+| **Możliwość edycji** | `true` |
+| **Zakres wartości** | Większe od 30 |
+
+<Aside type="danger" title="WAŻNE">
+  Wartość tego parametru należy dostosować z dużą ostrożnością, aby uniknąć uszkodzenia podzespołów urządzenia. Poniżej znajduje się zestawienie najpopularniejszych urządzeń wraz z sugerowanym minimalnym czasem pracy:
+   - **Bojler / Elektryczny podgrzewacz wody**: 30–60 minut (1800–3600 s). Woda potrzebuje czasu, aby zauważalnie podnieść swoją temperaturę. Częste włączanie na 2–3 minuty jedynie zużywa styk przekaźnika i nie daje realnego efektu grzewczego.
+   - **Pompa ciepła (c.w.u. / ogrzewanie)**:	30–45 minut (1800–2700 s). Bardzo krytyczne! Sprężarki w pompach ciepła i klimatyzatorach bardzo źle znoszą krótki taktowanie (tzw. taktowanie sprężarki). Zbyt częste starty drastycznie skracają żywotność urządzenia.
+   - **Klimatyzacja (chłodzenie/grzanie)**: 20–30 minut (1200–1800 s). Podobnie jak w pompie ciepła – czynnik chłodniczy potrzebuje kilku minut na ustabilizowanie ciśnienia i obiegu po uruchomieniu kompresora.
+   - **Pompa basenowa / Filtracja**: 30–60 minut (1800–3600 s). Cyrkulacja wody w basenie jest efektywna tylko wtedy, gdy trwa dłuższy czas. Ponadto silniki indukcyjne pomp zużywają najwięcej prądu podczas samego rozruchu.
+   - **Ładowarka EV (Samochód elektryczny)**: 15–30 minut (900–1800 s). Pakiety baterii w autach elektrycznych oraz sterowniki ładowania (BMS) wymagają kilku-kilkunastu sekund na negocjację prądu. Ciągłe przerywanie i wznawianie ładowania może powodować błędy komputera pokładowego.
+   - **Zmywarka / Pralka / Suszarka**: Czas pełnego cyklu (np. 60–120 min). Jeśli urządzenie nie posiada funkcji wstrzymania (Pauza), wyłączenie zasilania w trakcie programu spowoduje jego błąd lub zresetowanie cyklu od początku.
+   - **Grzejnik elektryczny / Farelka**: 10–15 minut (600–900 s). Grzejniki (szczególnie olejowe) mają dużą bezwładność cieplną. Krótkie cykle nie pozwolą na efektywne nagrzanie pomieszczenia.
+   - **Osuszacz / Nawilżacz powietrza**: 15–20 minut (900–1200 s). Pozwala na ustabilizowanie poziomu wilgotności w otoczeniu i uniknięcie częstego włączania sprężarki osuszacza.
+   - **Oświetlenie ogrodowe / Dekoracyjne**: 5–10 minut (300–600 s). Zapewnia estetykę (brak efektu "migania" ogrodu, gdy chmura przysłoni słońce).
+</Aside>
+
+### POWER_ON_RULE
+
+Parametr `POWER_ON_RULE` określa warunek logiki, który musi zostać spełniony, aby urządzenie zostało uruchomione (np. temperatura poniżej 55°C). Wartością parametru jest wyrażenie logiczne opierające się na składni `[ID:właściwość]`, które system ewaluuje w czasie rzeczywistym.
+
+Przykład:
+`[123:value] > 55 and [234:value] < 0`
+
+| Właściwość | Opis |
+| :--- | :--- |
+| **Typ parametru** | Tekst |
+| **Wartość domyślna** | `TRUE` |
+| **Możliwość edycji** | `true` |

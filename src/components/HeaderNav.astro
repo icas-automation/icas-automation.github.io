@@ -1,0 +1,134 @@
+---
+const currentLang = Astro.url.pathname.split('/')[1] || 'pl';
+const isEn = currentLang === 'en';
+
+const links = {
+  modulesLabel: isEn ? 'Modules' : 'Moduły',
+  downloads: { label: isEn ? 'Downloads' : 'Pliki do pobrania', url: isEn ? '/en/downloads/' : '/pl/downloads/' },
+  buy: { label: isEn ? 'Buy License' : 'Kup licencję', url: isEn ? '/en/buy/' : '/pl/buy/' },
+  contact: { label: isEn ? 'Contact' : 'Kontakt', url: isEn ? '/en/contact/' : '/pl/contact/' },
+  modules: [
+    { label: 'EMS Prime Switch', url: isEn ? '/en/modules/ems-prime-switch/' : '/pl/modules/ems-prime-switch/' }
+  ]
+};
+---
+
+<nav class="custom-header-nav">
+  <!-- Rozwijane menu Moduły -->
+  <div class="nav-dropdown">
+    <button class="dropdown-btn">
+      {links.modulesLabel}
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </button>
+    <div class="dropdown-menu">
+      {links.modules.map((item) => (
+        <a href={item.url}>{item.label}</a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Pozostałe linki -->
+  <a href={links.downloads.url} class="nav-link">{links.downloads.label}</a>
+  <a href={links.buy.url} class="nav-link highlight-buy">{links.buy.label}</a>
+  <a href={links.contact.url} class="nav-link">{links.contact.label}</a>
+</nav>
+
+<style>
+  .custom-header-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-right: 1rem;
+  }
+
+  .nav-link,
+  .dropdown-btn {
+    background: transparent;
+    border: none;
+    color: var(--sl-color-gray-2);
+    font-family: var(--sl-font-font-family);
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.5rem;
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .nav-link:hover,
+  .dropdown-btn:hover {
+    color: var(--sl-color-accent);
+    background-color: rgba(16, 185, 129, 0.08);
+  }
+
+  /* Akcent dla przycisku Kup licencję */
+  .highlight-buy {
+    color: #10b981 !important;
+    font-weight: 600;
+  }
+
+  :root[data-theme='light'] .highlight-buy {
+    color: #059669 !important;
+  }
+
+  /* Dropdown Menu */
+  .nav-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.25rem;
+    background-color: var(--sl-color-gray-6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    min-width: 200px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 0.5rem;
+  }
+
+  :root[data-theme='light'] .dropdown-menu {
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 0.5rem 0.8rem;
+    color: var(--sl-color-gray-1);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: rgba(16, 185, 129, 0.12);
+    color: var(--sl-color-accent);
+  }
+
+  .nav-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  /* Wyłączenie nawigacji na ekranach mobilnych (hamburger menu) */
+  @media (max-width: 768px) {
+    .custom-header-nav {
+      display: none;
+    }
+  }
+</style>
