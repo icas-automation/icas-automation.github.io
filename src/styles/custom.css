@@ -586,3 +586,10 @@ body {
 	color: #ffffff !important;
 	fill: #ffffff !important;
 }
+
+/* Automatyczne wyśrodkowanie wszystkich obrazków w treści */
+.sl-markdown-content img {
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
