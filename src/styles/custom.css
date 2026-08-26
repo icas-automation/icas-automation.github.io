@@ -33,12 +33,11 @@
 	--sl-color-black: #ffffff;
 }
 
-/* Wymuszenie czcionki Montserrat na wszystkich elementach */
 body, h1, h2, h3, h4, h5, h6, p, a, button, input {
 	font-family: 'Montserrat', system-ui, -apple-system, sans-serif !important;
 }
 
-/* Uniwersalne klasy pomocnicze dla tekstu */
+/* Klasy pomocnicze koloru tekstu */
 .green-text {
 	color: #10b981 !important;
 }
@@ -57,7 +56,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, button, input {
 }
 
 /* ==========================================================================
-   2. GÓRNA BELKA (HEADER) & PRZEŁĄCZNIK MOTYWU
+   2. GÓRNA BELKA (HEADER)
    ========================================================================== */
 header.header {
 	background-color: var(--sl-color-bg) !important;
@@ -79,7 +78,7 @@ starlight-lang-select {
 }
 
 /* ==========================================================================
-   3. SEKCJA HERO (GŁÓWNY BANER STRONY GŁÓWNEJ)
+   3. SEKCJA HERO
    ========================================================================== */
 .hero {
 	position: relative;
@@ -95,7 +94,6 @@ starlight-lang-select {
 	color: var(--sl-color-gray-2) !important;
 }
 
-/* Tło z obrazkiem (Tryb Ciemny) */
 :root:not([data-theme='light']) .hero {
 	background-image: 
 		linear-gradient(to right, rgba(19, 22, 20, 0.95) 0%, rgba(19, 22, 20, 0.7) 30%, rgba(19, 22, 20, 0) 100%),
@@ -105,7 +103,6 @@ starlight-lang-select {
 	background-repeat: no-repeat !important;
 }
 
-/* Tło z obrazkiem (Tryb Jasny) */
 :root[data-theme='light'] .hero {
 	background-image: 
 		linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 30%, rgba(255, 255, 255, 0) 100%),
@@ -120,7 +117,6 @@ main:not([data-landing]) .hero {
 	background-image: none !important;
 }
 
-/* Tytuł w banerze Hero */
 .hero h1 .green-text {
 	display: block;
 	color: #059669;
@@ -181,7 +177,7 @@ main:not([data-landing]) .hero {
 }
 
 /* ==========================================================================
-   5. TREŚĆ I AKAPITY (WYJUSTOWANIE GLOBALNE)
+   5. TREŚĆ I AKAPITY
    ========================================================================== */
 p, 
 .sl-markdown-content p,
@@ -240,7 +236,7 @@ p.mission-text,
 }
 
 /* ==========================================================================
-   6. SEKCJA ADVANCED FEATURES (NAPRZEMIENNY UKŁAD)
+   6. SEKCJA ADVANCED FEATURES (SZTYWNA SIATKA I WYMIAR OBRAZKA)
    ========================================================================== */
 .section-heading {
 	text-align: center;
@@ -271,28 +267,31 @@ p.mission-text,
 }
 
 .feature-row {
-	display: flex !important;
-	flex-direction: row !important;
+	display: grid !important;
+	grid-template-columns: 1fr 1fr !important;
 	align-items: center !important;
 	gap: 3rem !important;
 	margin-bottom: 4rem !important;
 	width: 100% !important;
 }
 
-.feature-row.reverse {
-	flex-direction: row-reverse !important;
+.feature-row.reverse .feature-content {
+	grid-column: 2 !important;
+	grid-row: 1 !important;
+}
+
+.feature-row.reverse .feature-image {
+	grid-column: 1 !important;
+	grid-row: 1 !important;
 }
 
 .feature-content {
-	flex: 1 1 50% !important;
-	width: 50% !important;
-	max-width: 50% !important;
+	width: 100% !important;
 }
 
 .feature-image {
-	flex: 1 1 50% !important;
-	width: 50% !important;
-	max-width: 50% !important;
+	width: 100% !important;
+	height: 300px !important; /* Zamrożona wysokość ramek */
 	border-radius: 1.25rem !important;
 	overflow: hidden !important;
 	box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6) !important;
@@ -308,6 +307,7 @@ p.mission-text,
 .feature-image img {
 	width: 100% !important;
 	height: 100% !important;
+	max-height: 300px !important;
 	object-fit: cover !important;
 	display: block !important;
 	margin: 0 !important;
@@ -345,16 +345,23 @@ p.mission-text,
 }
 
 @media (max-width: 768px) {
-	.feature-row,
-	.feature-row.reverse {
-		flex-direction: column !important;
+	.feature-row {
+		grid-template-columns: 1fr !important;
 		gap: 1.5rem !important;
 	}
 	
-	.feature-image, 
-	.feature-content {
-		width: 100% !important;
-		max-width: 100% !important;
+	.feature-row.reverse .feature-content,
+	.feature-row.reverse .feature-image {
+		grid-column: auto !important;
+		grid-row: auto !important;
+	}
+
+	.feature-image {
+		height: 220px !important;
+	}
+
+	.feature-image img {
+		max-height: 220px !important;
 	}
 }
 
@@ -381,7 +388,7 @@ p.mission-text,
 }
 
 /* ==========================================================================
-   8. PRZYKLEJONA STOPKA (STICKY FOOTER)
+   8. PRZYKLEJONA STOPKA
    ========================================================================== */
 body {
 	padding-bottom: 4rem !important;
@@ -448,7 +455,7 @@ body {
 }
 
 /* ==========================================================================
-   9. LISTA PLIKÓW DO POBRANIA (DOWNLOADS LIST)
+   9. LISTA PLIKÓW DO POBRANIA
    ========================================================================== */
 .download-list {
 	display: flex;
@@ -553,10 +560,8 @@ body {
 }
 
 /* ==========================================================================
-   10. POPRAWKI DLA PRZYCISKÓW (LINKBUTTON)
+   10. PRZYCISKI (LINKBUTTON)
    ========================================================================== */
-
-/* TRYB CIEMNY (Dark Mode) - Tekst na zielonych przyciskach ma być CZARNY */
 :root[data-theme='dark'] a[class*='sl-link-button'],
 :root[data-theme='dark'] .sl-link-button,
 :root:not([data-theme='light']) a[class*='sl-link-button'],
@@ -571,7 +576,6 @@ body {
 	fill: #131614 !important;
 }
 
-/* TRYB JASNY (Light Mode) - Tekst na ciemnozielonych przyciskach pozostaje BIAŁY */
 :root[data-theme='light'] a[class*='sl-link-button'],
 :root[data-theme='light'] .sl-link-button {
 	--sl-color-white: #ffffff !important;
