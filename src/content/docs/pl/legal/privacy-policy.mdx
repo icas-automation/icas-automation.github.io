@@ -5,10 +5,15 @@ template: splash
 
 *Ostatnia aktualizacja: 2026 r.*
 
-##### 1. Architektura Lokalna (Cloud-Free)
-Filozofia **ICAS Automation** opiera się na pełnej prywatności i bezwzględnej autonomii lokalnej:
-* Oprogramowanie (QuickApps) działa **w 100% lokalnie** wewnątrz procesora Twojej centrali Fibaro Home Center 3 / Yubii Home.
-* Kod Oprogramowania **nie wysyła, nie gromadzi i nie analizuje** żadnych danych telemetrycznych, statystyk użytkowania ani danych osobowych na zewnętrzne serwery chmurowe.
+##### 1. Architektura Lokalna (Local-First) i Weryfikacja Licencji
+Filozofia **ICAS Automation** opiera się na pełnej ochronie prywatności oraz lokalnej autonomii sterowania:
+* Lokalny proces decyzyjny: Oprogramowanie (QuickApp) działa w **100% lokalnie** na procesorze Twojej centrali Fibaro Home Center 3 / Yubii Home. Wszystkie kalkulacje, logika biznesowa oraz automatyka wykonują się bez udziału chmury.
+* Połączenie sieciowe: Połączenie z siecią wykorzystywane jest wyłącznie do bezpiecznej, okresowej **weryfikacji licencji oprogramowania**.
+* Zakres przetwarzanych danych technicznych: Podczas zapytania licencyjnego na serwerze zapisywane są wyłącznie minimalne dane identyfikacyjne:
+    * Numer seryjny centrali (Serial Number): Do przypisania i weryfikacji statusu licencji.
+    * Klasa oprogramowania (App Class): Identyfikator wariantu aplikacji.
+    * Język interfejsu (UI Language): Do celów analitycznych (priorytetyzacja wsparcia językowego).
+* Brak telemetrii: Oprogramowanie nie gromadzi, nie przesyła ani nie analizuje żadnych danych osobowych, historii nawyków domowników, stanów czujników, parametrów sieci Z-Wave/Zigbee ani danych telemetrycznych.
 
 ##### 2. Przetwarzanie Danych Osobowych
 Rozszerzenia oprogramowania ICAS nie zbierają danych osobowych mieszkańców. Wszelkie stanowe bazy danych, zmienne oraz harmonogramy są przechowywane wyłącznie w lokalnej pamięci Twojej centrali Smart Home i podlegają polityce prywatności producenta centrali (FIBARO / Nice).

@@ -5,10 +5,15 @@ template: splash
 
 *Last updated: 2026*
 
-##### 1. Local Architecture (Cloud-Free)
-The philosophy of **ICAS Automation** is built on complete privacy and absolute local autonomy:
-* The Software (QuickApps) runs **100% locally** inside the processor of your Fibaro Home Center 3 / Yubii Home hub.
-* The Software code **does not send, collect, or analyze** any telemetry data, usage statistics, or personal data on external cloud servers.
+##### 1. Local-First Architecture & License Verification
+The philosophy of **ICAS Automation** is built on complete privacy protection and total local control autonomy:
+* Local Decision Logic: The software (QuickApp) runs **100% locally** on your Fibaro Home Center 3 / Yubii Home processor. All calculations, state machines, and decision algorithms execute without cloud involvement.
+* Network Connectivity: Network communication is used strictly for periodic, **secure software license verification**.
+* Technical Data Scope: During license verification, only minimal technical identifiers are transmitted and stored on the server:
+    * Hub Serial Number: Used solely to identify the device and match its license state.
+    * App Class: Identifier for the specific software variant.
+    * UI Language: Used for basic analytics to prioritize language support.
+* No Telemetry: The software does not collect, transmit, or analyze any personal data, user habits, sensor states, network topology, or telemetry data.
 
 ##### 2. Processing of Personal Data
 ICAS software extensions do not collect personal data of household members. All state databases, variables, and schedules are stored exclusively in the local memory of your Smart Home hub and are subject to the privacy policy of the hub manufacturer (FIBARO / Nice).

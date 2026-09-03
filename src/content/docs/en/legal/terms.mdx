@@ -5,21 +5,26 @@ template: splash
 
 *Last updated: 2026*
 
-##### 1. Prohibition of Use in Critical Systems (High-Risk Applications)
-**ICAS Automation software is NOT DESIGNED FOR CRITICAL USE**. It is not designed, tested, or certified for use in environments requiring critical reliability.
+##### 1. Prohibition of Use in Critical Applications (High-Risk Applications)
+ICAS Automation software is **NOT DESIGNED FOR CRITICAL USE**. It is not designed, tested, or certified for use in environments requiring critical reliability (High-Risk Applications).
 
-**It is strictly forbidden to use the Software for:**
-* Controlling life-support equipment or medical devices.
-* Acting as the sole or primary fire protection, explosion prevention, or burglar alarm system.
-* Controlling installations where failure could pose a direct threat to human life or health.
-* Replacing physical, mechanical safety devices (e.g., safety valves, bimetallic thermostats, physical overcurrent circuit breakers).
+It is strictly prohibited to use the Software for:
+* Controlling life-support devices or medical equipment.
+* Serving as the sole or primary fire, explosion, flood, or intrusion protection system.
+* Controlling installations where failure or sudden shutdown could directly endanger human life or health, or lead to significant material damage.
+* Replacing physical, mechanical, and electrical safety devices (e.g., safety valves, capillary/bimetallic STB safety thermostats, physical overcurrent fuses).
 
-##### 2. Hardware Fallback Requirement
-Software-based automation (QuickApp) must never be the only line of defense against hardware failure.
-* **Heating Installations:** Every heating circuit controlled by the Software must have hardware overheat protection (e.g., an STB safety thermostat that mechanically disconnects power when a safe temperature is exceeded).
-* **Pumps and Valves:** Actuating devices must have factory-built protection against dry running or overloading.
+##### 2. Impact of the Licensing Lifecycle on System Operation
+The User and Installer must account for the operational logic of the licensing mechanism when designing the installation:
+* **Inactive State:** In the event of trial period expiration (14 days), absence of a paid Full license, or inability to perform periodic network verification (caused by prolonged lack of internet connectivity on the hub), the Software automatically transitions to an inactive state and halts decision-making algorithms and switch control operations.
+* **Fail-Safe Condition:** Halting the execution of the QuickApp logic loop must not pose a hazard to the installation. Energy loads (e.g., heaters, pumps, EV chargers) must be configured so that, in the absence of a control signal, they default to a safe OFF state or implement autonomous hardware protection.
 
-##### 3. Testing and Supervision
+##### 3. Requirement for Physical Protection Devices (Hardware Fallback)
+Software automation (QuickApp) executes logic under a Local-First model, but it must never serve as the sole line of defense against hardware failure or software interruption.
+* **Heating Installations:** Every heating circuit controlled by the Software must feature an independent, mechanical overheat protection device (e.g., a capillary STB safety thermostat that disconnects power to the actuator circuit upon exceeding safe temperatures).
+* **Pumps, Valves, and Energy Storage Systems:** Actuators and measurement devices must feature factory-installed, autonomous protections against dry running, overload, short circuits, and exceeding operating parameters.
+
+##### 4. Testing, Supervision, and Emergency Simulations
 The User or Installer configuring the system is obligated to:
-1. Conduct simulations of emergency situations (e.g., power outage, loss of Z-Wave connectivity) and ensure that the system transitions into a Fail-Safe state.
-2. Regularly verify the correct physical state of the devices following hub operating system updates.
+* **Conduct safe-state tests:** Simulate emergency situations (power outages, loss of Z-Wave/Wi-Fi connectivity, total lack of internet access, and app transition to `DISABLED` mode) to ensure the physical installation transitions to a fully safe state (Fail-Safe).
+* **Verify state post-updates:** Regularly verify the proper operation of connected actuators and validate configured variables after every firmware update of the central hub (Fibaro HC3 / Yubii Home OS) or update of the QuickApp itself.

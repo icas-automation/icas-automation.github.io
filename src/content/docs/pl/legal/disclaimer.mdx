@@ -6,23 +6,30 @@ template: splash
 *Ostatnia aktualizacja: 2026 r.*
 
 ##### 1. Zastrzeżenie „W stanie, w jakim jest” (AS IS)
-Oprogramowanie, moduły QuickApp oraz algorytmy dostarczane przez **ICAS Automation** są udostępniane w stanie **„takim, w jakim są” (AS IS)**, bez jakichkolwiek gwarancji – wyraźnych lub dorozumianych – w tym m.in. bez dorozumianych gwarancji przydatności handlowej, przydatności do określonego celu czy bezawaryjności.
+Oprogramowanie, moduły QuickApp, skrypty oraz algorytmy dostarczane przez **ICAS Automation** są udostępniane w stanie **„takim, w jakim są”** (AS IS) oraz „w miarę dostępności”, bez jakichkolwiek gwarancji – wyraźnych lub dorozumianych – w tym m.in. bez dorozumianych gwarancji przydatności handlowej, przydatności do określonego celu, bezawaryjności czy ciągłości działania.
 
-##### 2. Wyłączenie Odpowiedzialności za Szkody Materialne
-W maksymalnym zakresie dopuszczalnym przez obowiązujące prawo (w tym art. 473 § 1 Kodeksu Cywilnego), **ICAS Automation nie ponosi odpowiedzialności** za jakiekolwiek szkody majątkowe, straty rzeczywiste ani utracone korzyści wynikające z użytkowania lub braku możliwości użytkowania Oprogramowania. Wyłączenie odpowiedzialności obejmuje w szczególności:
-* **Uszkodzenia urządzeń wykonawczych**, przekaźników, instalacji elektrycznych, hydraulicznych, grzewczych, klimatyzacyjnych oraz elektroniki użytkowej.
-* **Szkody materialne** (w tym zalania, przegrzania) powstałe w wyniku błędnych odczytów czujników, awarii zasilania, przerw w komunikacji lub zbyt częstego przełączania styków.
-* **Przerwy w działaniu** systemu, utratę danych oraz koszty naprawy urządzeń osób trzecich.
+##### 2. Tryb Nieaktywny i Okres Próbny
+Użytkownik przyjmuje do wiadomości, że Oprogramowanie posiada wbudowane mechanizmy kontroli licencji. ICAS Automation nie ponosi żadnej odpowiedzialności za jakiekolwiek szkody, straty energii, nieoptymalne zarządzanie nadwyżkami PV, uszkodzenia odbiorników lub przerwy w pracy instalacji wynikające z:
+* Automatycznego przejścia Oprogramowania w tryb nieaktywny po wygaśnięciu 14-dniowego darmowego okresu próbnego.
+* Braku aktywnej i opłaconej licencji Pełnej.
+* Przejścia Oprogramowania w tryb nieaktywny w wyniku braku możliwości przeprowadzenia okresowej weryfikacji licencji spowodowanej długotrwałym brakiem dostępu centrali do sieci Internet z przyczyn leżących po stronie Użytkownika.
+
+##### 3. Wyłączenie Odpowiedzialności za Szkody Materialne i Energetyczne
+W maksymalnym zakresie dopuszczalnym przez obowiązujące prawo (w tym art. 473 § 1 Kodeksu Cywilnego), ((ICAS Automation nie ponosi odpowiedzialności)) za jakiekolwiek szkody majątkowe, straty rzeczywiste ani utracone korzyści wynikające z użytkowania lub braku możliwości użytkowania Oprogramowania. Wyłączenie odpowiedzialności obejmuje w szczególności:
+* **Uszkodzenia urządzeń wykonawczych**, przekaźników, instalacji elektrycznych, hydraulicznych, grzewczych, klimatyzacyjnych, magazynów energii oraz elektroniki użytkowej.
+* **Szkody materialne** (w tym zalania, przegrzania) oraz straty finansowe wynikające z braku załączenia lub wyłączenia odbiornika w oczekiwanym czasie.
+* **Błędne decyzje sterujące** powstałe w wyniku przekłamań w odczytach z liczników energii, awarii zasilania, przerw w komunikacji radiowej lub zbyt częstego przełączania styków.
+* **Przerwy w działaniu systemu Smart Home**, utratę danych oraz koszty naprawy urządzeń osób trzecich.
 Wyłączenie odpowiedzialności nie dotyczy szkód wyrządzonych przez ICAS Automation z winy umyślnej (zgodnie z art. 473 § 2 Kodeksu Cywilnego).
 
-##### 3. Wpływ Aktualizacji Oprogramowania Układowego (Firmware)
-Działanie Oprogramowania zależy od środowiska uruchomieniowego systemu Fibaro/Nice. ICAS Automation nie ponosi odpowiedzialności za nieprawidłowe działanie modułów wynikające z:
-* Aktualizacji oprogramowania centrali (Fibaro HC3 / Yubii Home OS).
-* Zmian w API producentów zewnętrznych.
-* Problemów z zasięgiem sieci Z-Wave, Zigbee, Wi-Fi lub uszkodzeń sprzętowych samych czujników i wykonawców.
+##### 4. Wpływ Środowiska Uruchomieniowego i Infrastruktury
+Działanie Oprogramowania wykonuje się lokalnie na centrali, jednak jest zależne od środowiska sprzętowego i systemowego producenta centrali. ICAS Automation nie ponosi odpowiedzialności za nieprawidłowe działanie modułów wynikające z:
+* Aktualizacji oprogramowania układowego centrali (Fibaro HC3 / Yubii Home OS).
+* Zmian w API lub protokołach dostarczanych przez producenta centrali lub firmy trzecie.
+* Problemów z zasięgiem i stabilnością sieci Z-Wave, Zigbee, Wi-Fi oraz fizycznych uszkodzeń czujników lub urządzeń wykonawczych.
 
-##### 4. Ograniczenie Odpowiedzialności Finansowej
-Jeżeli z jakichkolwiek przyczyn prawnych odpowiedzialność ICAS Automation zostanie ustalona przez właściwy sąd, **całkowita kwota odpowiedzialności odszkodowawczej ogranicza się wyłącznie do kwoty faktycznie zapłaconej przez Użytkownika za zakup danej licencji Oprogramowania** (lub do kwoty 0 PLN w przypadku oprogramowania udostępnionego bezpłatnie).
+##### 5. Odpowiedzialność za Konfigurację i Parametryzację
+Poprawność i bezpieczeństwo działania algorytmów zależą od parametrów wprowadzonych przez Użytkownika (m.in. identyfikatora przełącznika switch_id, wartości mocy switch_pwr, progów oraz reguł power_on_rule). Użytkownik ponosi pełną odpowiedzialność za zweryfikowanie oraz przetestowanie poprawności działania algorytmów w bezpiecznym środowisku przed oddaniem ich do automatycznej, stałej eksploatacji.
 
-##### 5. Odpowiedzialność za Parametryzację
-Użytkownik przyjmuje do wiadomości, że poprawność działania automatyki zależy od wprowadzonej przez niego konfiguracji (zmiennych QuickApp, progów, czasów). Użytkownik ponosi pełną odpowiedzialność za przetestowanie poprawności działania algorytmów w bezpiecznym środowisku przed oddaniem ich do codziennej eksploatacji.
+##### 6. Ograniczenie Odpowiedzialności Finansowej
+Jeżeli z jakichkolwiek przyczyn prawnych odpowiedzialność ICAS Automation zostanie ustalona przez właściwy sąd, **całkowita łączna kwota odpowiedzialności odszkodowawczej ogranicza się wyłącznie do kwoty faktycznie zapłaconej przez Użytkownika za zakup danej licencji Oprogramowania** (lub do kwoty 0 PLN w przypadku korzystania z wersji próbnej lub oprogramowania udostępnionego bezpłatnie).

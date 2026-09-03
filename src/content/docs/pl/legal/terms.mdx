@@ -6,20 +6,25 @@ template: splash
 *Ostatnia aktualizacja: 2026 r.*
 
 ##### 1. Zakaz Stosowania w Systemach Krytycznych (High-Risk Applications)
-Oprogramowanie **ICAS Automation NOT DESIGNED FOR CRITICAL USE**. Nie jest ono zaprojektowane, testowane ani certyfikowane do użytku w środowiskach wymagających niezawodności krytycznej.
+Oprogramowanie ICAS Automation **NOT DESIGNED FOR CRITICAL USE**. Nie jest ono zaprojektowane, testowane ani certyfikowane do użytku w środowiskach wymagających niezawodności krytycznej (High-Risk Applications).
 
-**Kategorycznie zabrania się stosowania Oprogramowania do:**
-* Sterowania urządzeniami podtrzymującymi życie lub aparatury medycznej.
-* Jako jedynego lub głównego systemu przeciwpożarowego, przeciwwybuchowego lub przeciwwłamaniowego.
-* Sterowania instalacjami, których awaria może bezpośrednio zagrażać życiu lub zdrowiu ludzkiemu.
-* Zastępowania fizycznych, mechanicznych urządzeń zabezpieczających (np. zaworów bezpieczeństwa, termostatów bimetalicznych, fizycznych bezpieczników nadprądowych).
+Kategorycznie zabrania się stosowania Oprogramowania do:
+* Sterowania urządzeniami podtrzymującymi życie lub aparaturą medyczną.
+* Pełnienia funkcji jedynego lub głównego systemu przeciwpożarowego, przeciwwybuchowego, przeciwzalaniowego lub przeciwwłamaniowego.
+* Sterowania instalacjami, których awaria lub nagłe zatrzymanie może bezpośrednio zagrażać życiu, zdrowiu ludzkiemu lub prowadzić do znacznych szkód materialnych.
+* Zastępowania fizycznych, mechanicznych i elektrycznych urządzeń zabezpieczających (np. zaworów bezpieczeństwa, termostatów bimetalicznych STB, fizycznych bezpieczników nadprądowych).
 
-##### 2. Wymóg Bezpieczników Fizycznych (Hardware Fallback)
-Automatyka programowa (QuickApp) nigdy nie może stanowić jedynej linii obrony przed awarią sprzętową. 
-* **Instalacje Grzewcze:** Każdy obwód grzewczy sterowany przez Oprogramowanie musi posiadać sprzętowe zabezpieczenie przed przegrzaniem (np. termostat bezpieczeństwa STB odłączający zasilanie mechanicznie przy przekroczeniu bezpiecznej temperatury).
-* **Pompy i Zawory:** Urządzenia wykonawcze muszą posiadać fabryczne zabezpieczenia przed pracą na sucho lub przeciążeniem.
+##### 2. Wpływ Cyklu Licencyjnego na Działanie Systemu
+Użytkownik oraz Instalator muszą uwzględnić logikę działania mechanizmu licencyjnego w projekcie instalacji:
+* **Tryb Nieaktywny**: W przypadku wygaśnięcia 14-dniowego okresu próbnego, braku opłaconej licencji Pełnej lub braku możliwości przeprowadzenia okresowej weryfikacji sieciowej (spowodowanej długotrwałym brakiem połączenia internetowego centrali), Oprogramowanie automatycznie przechodzi w tryb nieaktywny i wstrzymuje wykonywanie algorytmów decyzyjnych oraz sterowanie przełącznikami.
+* **Warunek Fail-Safe**: Zatrzymanie działania pętli logicznej QuickAppa nie może powodować zagrożenia dla instalacji. Odbiorniki energii (np. grzałki, pompy, ładowarki) muszą być skonfigurowane tak, aby w przypadku braku sygnału sterującego domyślnie przechodziły w bezpieczny stan wyłączony lub realizowały autonomiczną ochronę sprzętową.
 
-##### 3. Testowanie i Nadzór
+##### 3. Wymóg Bezpieczników Fizycznych (Hardware Fallback)
+Automatyka programowa (QuickApp) realizuje logikę w modelu Local-First, lecz nigdy nie może stanowić jedynej linii obrony przed awarią sprzętową lub wstrzymaniem pracy oprogramowania.
+* **Instalacje Grzewcze**: Każdy obwód grzewczy sterowany przez Oprogramowanie musi posiadać niezależne, mechaniczne zabezpieczenie przed przegrzaniem (np. kapilarny termostat bezpieczeństwa STB odłączający zasilanie obwodu wykonawczego po przekroczeniu dopuszczalnej temperatury).
+* **Pompy, Zawory i Magazyny Energii**: Urządzenia wykonawcze i pomiarowe muszą posiadać fabryczne, autonomiczne zabezpieczenia przed pracą na sucho, przeciążeniem, zwarciem oraz przekroczeniem parametrów roboczych.
+
+##### 4. Testowanie, Nadzór i Symulacje Awaryjne
 Użytkownik lub Instalator konfigurujący system ma obowiązek:
-1. Przeprowadzić symulację sytuacji awaryjnych (np. zanik zasilania, brak łączności Z-Wave) i upewnić się, że system przechodzi w stan bezpieczny (*Fail-Safe*).
-2. Regularnie weryfikować poprawność stanu fizycznych urządzeń po aktualizacjach systemu operacyjnego centrali.
+* **Przeprowadzić testy stanu bezpiecznego**: Symulować sytuacje awaryjne (zanik zasilania, brak łączności Z-Wave/Wi-Fi, całkowity brak dostępu do Internetu oraz przejście aplikacji w tryb DISABLED) i upewnić się, że fizyczna instalacja przechodzi w stan całkowicie bezpieczny (Fail-Safe).
+* **Weryfikować stan po aktualizacjach**: Regularnie sprawdzać poprawność działania podłączonych urządzeń wykonawczych oraz weryfikować poprawność wprowadzonych zmiennych konfiguracyjnych po każdej aktualizacji oprogramowania układowego centrali (Fibaro HC3 / Yubii Home OS) lub aktualizacji samego QuickAppa.
